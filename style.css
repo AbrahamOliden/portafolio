@@ -17,6 +17,7 @@ body {
     box-sizing: border-box;
     background-color: var(--background-color) ;
     font-family: 'Raleway';
+    font-size: 1rem;
     color: var(--text-color);
     margin: 0;
     padding: 0;
@@ -42,15 +43,9 @@ con una interfaz de usuario compleja, y permite la reutilización del código ex
 Enlace de la documentación oficial!
 https://en.bem.info/methodology/quick-start/*/
 
-/* Tudo div */
-
-.tudo {
-    
-}
-
 section {
     width: 80%;
-    margin: 32px auto;
+    margin: 4rem auto;
 }
 
 /*Sección Menu*/
@@ -59,13 +54,18 @@ section.menu{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
+    margin-top: 2rem;
 }
 
 .menu__header {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
     color: var(--highlight-color);
+}
+
+.menu__title {
+    font-size: 1.5rem;
 }
 
 .menu nav {
@@ -77,11 +77,11 @@ section.menu{
 .menu__list {
     display: flex;
     justify-content: space-around;
-    gap: 15px;
+    gap: 1rem;
 }
 
-.menu__list__item {
-    /* width: 5rem; */
+.menu__list__item a {
+    color: var(--accent-color);
 }
 
 /*Sección Title*/
@@ -96,36 +96,156 @@ section.title{
     align-items: center;
 }
 
+.title__bio {
+    font-size: 2rem;
+}
+
+.title__network {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0;
+    gap: 2rem;
+}
+
 /*Sección About*/
 
 section.about{
 
 }
 
+.about__title {
+    font-size: 1.5rem;
+}
+
+.about__paragraph {
+    max-width: 70%;
+}
+
+/* Seccion Skills */
+
+section.skills {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.skills__title {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.skills__line {
+    display: flex;
+    justify-content: center;
+}
 /*Sección Hobbies*/
 
 section.hobbies{
-    
+    display: flex;
+    flex-flow: column nowrap;
 }
 
+.hobbies__title {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.hobbies__line {
+    display: flex;
+    justify-content: center;
+}
 /* Experiencia Académica*/
 
-section.academic{
-
+section.academic {
+    display: flex;
+    flex-flow: column nowrap;
 }
 
+.academic__title {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.academic__courses {
+    display: flex;
+    justify-content: center;
+}
 /* experiencia*/
 
-section.experience{
+section.experience {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
 
+.experience__section__title {
+    align-self: center;
+}
+
+.experience__box {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    gap: 3rem;
+    margin: 3rem;
+}
+
+.experience__box:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.experience__img {
+    max-width: 66%;
+}
+
+.experience__title {
+    font-weight: 600;
+}
+
+.experience__text {
+    font-weight: 400;
+}
+
+.experience__description {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+
+.experiencia__botao--repo {
+    background-color: var(--highlight-color);
+    color: var(--text-color);
+    border: none;
+}
+
+.experience__botao--demo {
+    color: var(--highlight-color);
+    border: 3px solid var(--highlight-color);
+}
+
+.experiencia__botao--repo, .experience__botao--demo {
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 1.2rem;
 }
 
 /*Contacto*/
 
 section.formcontato{
-
+    width: 100%;
 }
 
+.formcontato__contacto {
+    display: flex;
+    gap: 1rem;
+}
+
+.formcontato__input:focus {
+    border-bottom: 2px solid var(--highlight-color);
+}
+
+.formcontato__input:focus::placeholder {
+    color: var(--highlight-color);
+}
 /*footeer*/
 
 section.footer{
