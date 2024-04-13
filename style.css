@@ -86,14 +86,11 @@ section.menu{
 
 /*Sección Title*/
 
-section.title{
-
-}
-
 .title__div {
     display: flex;
     flex-flow: row-reverse nowrap;
     align-items: center;
+    gap: 3rem;
 }
 
 .title__bio {
@@ -107,11 +104,12 @@ section.title{
     gap: 2rem;
 }
 
-/*Sección About*/
-
-section.about{
-
+.title__network__item a {
+    display: flex;
+    align-items: center;
 }
+
+/*Sección About*/
 
 .about__title {
     font-size: 1.5rem;
@@ -137,6 +135,7 @@ section.skills {
     display: flex;
     justify-content: center;
 }
+
 /*Sección Hobbies*/
 
 section.hobbies{
@@ -239,19 +238,73 @@ section.formcontato{
     gap: 1rem;
 }
 
+.formcontato--esquerda {
+    width: 50%;
+}
+
+
+
+.formcontato__text {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+}
+
+.formcontato__title {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+}
+
+.formcontato__subtext {
+    margin: 0.5rem 0;
+}
+
+.formcontato__form {
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.formcontato__input {
+    display: flex;
+    height: 1rem;
+    width: 90%;
+    font-size: 1rem;
+    margin: 1rem 0;
+    padding: 0.5rem;
+}
+
 .formcontato__input:focus {
     border-bottom: 2px solid var(--highlight-color);
 }
 
 .formcontato__input:focus::placeholder {
     color: var(--highlight-color);
-}
-/*footeer*/
-
-section.footer{
-   
+    font-size: 0.8rem;
 }
 
+.formcontato__textarea {
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.formcontato__botao {
+    display: flex;
+    color: var(--text-color);
+    background-color: var(--highlight-color);
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    border: none;
+}
+/*footer*/
+
+.footer__rodape {
+    font-size: 1rem;
+    text-align: center;
+    color: var(--accent-color);
+}
 /* Vamos a desafiarnos trabajando con responsividad?
 Utiliza las referencias de los breakpoints @media abajo */
 
