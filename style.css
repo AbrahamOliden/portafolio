@@ -53,7 +53,7 @@ section {
 section.menu{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 2rem;
 }
 
@@ -65,7 +65,7 @@ section.menu{
 }
 
 .menu__title {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .menu nav {
@@ -112,7 +112,7 @@ section.menu{
 /*Sección About*/
 
 .about__title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .about__paragraph {
@@ -127,13 +127,36 @@ section.skills {
 }
 
 .skills__title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
 }
 
 .skills__line {
     display: flex;
     justify-content: center;
+    gap: 2rem;
+}
+
+.skills__box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 150px;
+    width: 150px;
+    background-color: var(--text-color);
+}
+
+.skills__box ul {
+    margin: 1rem;
+    padding: 0;
+}
+
+.skills__img {
+    margin-bottom: 0.5rem;
+}
+
+.skills__name {
+    color: var(--highlight-color);
 }
 
 /*Sección Hobbies*/
@@ -144,13 +167,36 @@ section.hobbies{
 }
 
 .hobbies__title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
 }
 
 .hobbies__line {
     display: flex;
     justify-content: center;
+    gap: 2rem;
+}
+
+.hobbies__box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 150px;
+    width: 150px;
+    background-color: var(--text-color);
+}
+
+.hobbies__box ul {
+    margin: 1rem;
+    padding: 0;
+}
+
+.hobbies__img {
+    margin-bottom: 0.5rem;
+}
+
+.hobbies__name {
+    color: var(--highlight-color);
 }
 /* Experiencia Académica*/
 
@@ -160,13 +206,30 @@ section.academic {
 }
 
 .academic__title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
 }
 
 .academic__courses {
     display: flex;
+    justify-content: space-evenly;
+}
+
+.academic__courses__box {
+    width: 30%;
+}
+
+.academic__courses__list {
+    margin: 0;
+    padding: 0;
+}
+
+.academic__courses__item__img {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    height: 250px;
+    background-color: var(--text-color);
 }
 /* experiencia*/
 
@@ -178,6 +241,7 @@ section.experience {
 
 .experience__section__title {
     align-self: center;
+    font-size: 1.8rem;
 }
 
 .experience__box {
@@ -242,8 +306,6 @@ section.formcontato{
     width: 50%;
 }
 
-
-
 .formcontato__text {
     display: flex;
     flex-flow: column nowrap;
@@ -251,7 +313,7 @@ section.formcontato{
 }
 
 .formcontato__title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin: 0 0 1rem 0;
 }
 
