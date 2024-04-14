@@ -84,6 +84,10 @@ section.menu{
     color: var(--accent-color);
 }
 
+.menu__list__item__contato {
+    display: none;
+}
+
 /*Sección Title*/
 
 .title__div {
@@ -95,6 +99,10 @@ section.menu{
 
 .title__bio {
     font-size: 2rem;
+}
+
+.title__subsection {
+    font-weight: normal;
 }
 
 .title__network {
@@ -252,7 +260,8 @@ section.experience {
     margin: 3rem;
 }
 
-.experience__box:nth-child(odd) {
+.experience__box__reverse {
+    display: flex;
     flex-direction: row-reverse;
 }
 
@@ -391,22 +400,136 @@ Utiliza las referencias de los breakpoints @media abajo */
 /*Mobile*/
 @media (min-width: 425px) {
 
+    section {
+        width: auto;
+        margin: 2rem auto;
+    }
+
 /*Menu*/
 
+    section.menu {
+        margin: 0 1rem;
+        justify-content: space-between;
+    }
+
+    .menu__title {
+        font-size: 1.5rem;
+    }
+
+    .menu__list {
+        display: none;
+    }
+
+    .menu__list__item__contato {
+        display: flex;
+    }
 /*Titulo*/
+    section.title {
+        display: flex;
+    }
+
+    .title__div {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+
+    .title__profile {
+        width: 25%;
+    }
+
+    .title__bio {
+        font-size: 1.5rem;
+    }
+
+    .title__network {
+        gap: 1rem;
+    }
 
 /*Sección sobre mi*/
 
+    .about__title {
+        font-size: 1.5rem;
+    }
+
+    .about__paragraph {
+        max-width: 100%;
+    }
+
 /*Skills*/
 
+    .skills__title {
+        font-size: 1.5rem;
+    }
+
+    .skills__line {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+
+    .skills__box {
+        width: 160px;
+        height: 120px;
+    }
+
 /*Hobbies*/
+
+    .hobbies__line {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+
+    .hobbies__box {
+        height: 120px;
+        width: 160px;
+    }
  
 /*Formación Académica*/
 
+    .academic__courses {
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    .academic__courses__box {
+        width: 80%;
+    }
+
+    .academic__courses__item__img {
+        height: 150px;
+    }
+
 /*Experiencia Profesional*/
+
+    .experience__box, .experience__box__reverse {
+        flex-flow: column nowrap;
+        box-sizing: border-box;
+        align-items: center;
+        margin: 0;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .experience__img {
+        max-width: 100%;
+    }
 
  /*Contacto*/
 
+    .formcontato--esquerda {
+        display: none;
+    }
+
+    .formcontato__text {
+        padding: 1rem;
+    }
+
 /*Footer*/
+
+    section.footer {
+        margin: 1rem auto 0;
+        border-top: 1px solid var(--accent-color);
+    }
 
 }
