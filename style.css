@@ -227,6 +227,8 @@ section.academic {
     width: 30%;
 }
 
+
+
 .academic__courses__list {
     margin: 0;
     padding: 0;
@@ -237,7 +239,16 @@ section.academic {
     justify-content: center;
     align-items: center;
     height: 250px;
-    background-color: var(--text-color);
+    padding: 1rem;
+    background-color: #0A0A23;
+}
+
+#alura-one {
+    background-color: #FEFEFE;
+}
+
+.academic__courses__item__img img {
+    max-width: 100%;
 }
 /* experiencia*/
 
@@ -379,26 +390,8 @@ section.formcontato{
 /* Vamos a desafiarnos trabajando con responsividad?
 Utiliza las referencias de los breakpoints @media abajo */
 
-
-/*Tablet*/
-@media (min-width: 768px) {
-
-/* Menú */
-
-/*title*/
-
-/*Skills*/
-
-/*Hobbies*/
-
-/*Formación Académica*/
-
-/*Experiencia Profesional*/
-
-}
-
 /*Mobile*/
-@media (min-width: 425px) {
+@media only screen and (min-width: 425px) {
 
     section {
         width: auto;
@@ -449,6 +442,10 @@ Utiliza las referencias de los breakpoints @media abajo */
 
 /*Sección sobre mi*/
 
+    .about__container {
+        padding: 0 1rem;
+    }
+
     .about__title {
         font-size: 1.5rem;
     }
@@ -466,6 +463,8 @@ Utiliza las referencias de los breakpoints @media abajo */
     .skills__line {
         flex-flow: column wrap;
         align-items: center;
+        max-height: 500px;
+        column-gap: 0;
     }
 
     .skills__box {
@@ -478,6 +477,8 @@ Utiliza las referencias de los breakpoints @media abajo */
     .hobbies__line {
         flex-flow: column wrap;
         align-items: center;
+        max-height: 500px;
+        column-gap: 0;
     }
 
     .hobbies__box {
@@ -533,3 +534,84 @@ Utiliza las referencias de los breakpoints @media abajo */
     }
 
 }
+
+/*Tablet*/
+@media only screen and (min-width: 768px) {
+
+    /* Menú */
+    
+    section.menu {
+        margin: 0 2rem;
+    }
+    
+    /*title*/
+
+    .title__div {
+        flex-flow: row-reverse nowrap;
+        align-items: center;
+        padding: 0 2rem;
+    }
+    
+    /*Skills*/
+
+    .skills__line {
+        flex-flow: row wrap;
+        column-gap: 2rem;
+    }
+
+    .skills__box {
+        width: 225px;
+    }
+    
+    /*Hobbies*/
+
+    .hobbies__line {
+        flex-flow: row wrap;
+        column-gap: 2rem;
+    }
+
+    .hobbies__box {
+        width: 225px;
+    }
+    
+    /*Formación Académica*/
+
+    .academic__courses {
+        flex-flow: row nowrap;
+    }
+
+    .academic__courses__box {
+        width: 30%;
+    }
+    
+    /*Experiencia Profesional*/
+
+    section.experience {
+        align-items: center;
+    }
+
+    .experience__box, .experience__box__reverse {
+        width: auto;
+        align-items: flex-start;
+    }
+
+    section.formcontato {
+        width: auto;
+        margin: 2rem;
+    }
+
+    .formcontato__input {
+        width: 100%;
+    }
+
+    .formcontato__textarea {
+        width: 100%;
+    }
+
+    /* Footer */
+
+    section.footer {
+        margin-top: 2rem;
+    }
+    
+    }
