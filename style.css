@@ -163,6 +163,15 @@ section.skills {
     margin-bottom: 0.5rem;
 }
 
+.skills__img i {
+    color: var(--highlight-color);
+}
+
+.skills__img img {
+    color: var(--accent-color);
+    max-width: 20px;
+}
+
 .skills__name {
     color: var(--highlight-color);
 }
