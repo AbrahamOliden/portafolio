@@ -80,6 +80,10 @@ section.menu{
     gap: 1rem;
 }
 
+.menu__list__item {
+    font-size: 1.1rem;
+}
+
 .menu__list__item a {
     color: var(--accent-color);
 }
@@ -95,6 +99,11 @@ section.menu{
     flex-flow: row-reverse nowrap;
     align-items: center;
     gap: 3rem;
+}
+
+.title__profile {
+    max-height: 300px;
+    max-width: 300px;
 }
 
 .title__bio {
@@ -124,7 +133,8 @@ section.menu{
 }
 
 .about__paragraph {
-    max-width: 70%;
+    font-size: 1.1rem;
+    max-width: 80%;
 }
 
 /* Seccion Skills */
@@ -149,7 +159,7 @@ section.skills {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    height: 150px;
+    height: 120px;
     width: 150px;
     background-color: var(--text-color);
 }
@@ -198,7 +208,7 @@ section.hobbies{
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    height: 150px;
+    height: 120px;
     width: 150px;
     background-color: var(--text-color);
 }
@@ -283,6 +293,8 @@ section.experience {
 .experience__box__reverse {
     display: flex;
     flex-direction: row-reverse;
+    gap: 3rem;
+    margin: 3rem;
 }
 
 .experience__img {
@@ -391,6 +403,10 @@ section.formcontato{
 }
 /*footer*/
 
+section.footer {
+    border-top: 1px solid var(--accent-color);
+}
+
 .footer__rodape {
     font-size: 1rem;
     text-align: center;
@@ -400,7 +416,7 @@ section.formcontato{
 Utiliza las referencias de los breakpoints @media abajo */
 
 /*Mobile*/
-@media only screen and (min-width: 425px) {
+@media only screen and (min-width: 425px) and (max-width: 1200px){
 
     section {
         width: auto;
@@ -447,6 +463,7 @@ Utiliza las referencias de los breakpoints @media abajo */
 
     .title__network {
         gap: 1rem;
+        flex-wrap: wrap;
     }
 
 /*Sección sobre mi*/
@@ -473,7 +490,7 @@ Utiliza las referencias de los breakpoints @media abajo */
         flex-flow: column wrap;
         align-items: center;
         max-height: 500px;
-        column-gap: 0;
+        align-content: center;
     }
 
     .skills__box {
@@ -483,11 +500,15 @@ Utiliza las referencias de los breakpoints @media abajo */
 
 /*Hobbies*/
 
+    .hobbies__title {
+        font-size: 1.5rem;
+    }
+
     .hobbies__line {
         flex-flow: column wrap;
         align-items: center;
         max-height: 500px;
-        column-gap: 0;
+        align-content: center;
     }
 
     .hobbies__box {
@@ -496,6 +517,10 @@ Utiliza las referencias de los breakpoints @media abajo */
     }
  
 /*Formación Académica*/
+
+    .academic__title {
+        font-size: 1.5rem;
+    }
 
     .academic__courses {
         flex-flow: column nowrap;
@@ -512,6 +537,10 @@ Utiliza las referencias de los breakpoints @media abajo */
 
 /*Experiencia Profesional*/
 
+    .experience__section__title {
+        font-size: 1.5rem;
+    }
+
     .experience__box, .experience__box__reverse {
         flex-flow: column nowrap;
         box-sizing: border-box;
@@ -527,6 +556,10 @@ Utiliza las referencias de los breakpoints @media abajo */
 
  /*Contacto*/
 
+    .formcontato__title {
+        font-size: 1.5rem;
+    }
+
     .formcontato--esquerda {
         display: none;
     }
@@ -539,13 +572,12 @@ Utiliza las referencias de los breakpoints @media abajo */
 
     section.footer {
         margin: 1rem auto 0;
-        border-top: 1px solid var(--accent-color);
     }
 
 }
 
 /*Tablet*/
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1200px){
 
     /* Menú */
     
@@ -587,6 +619,7 @@ Utiliza las referencias de los breakpoints @media abajo */
 
     .academic__courses {
         flex-flow: row nowrap;
+        align-items: flex-start;
     }
 
     .academic__courses__box {
@@ -604,9 +637,19 @@ Utiliza las referencias de los breakpoints @media abajo */
         align-items: flex-start;
     }
 
+    /* Contacto */
+
     section.formcontato {
         width: auto;
         margin: 2rem;
+    }
+
+    .formcontato--esquerda {
+        display: none;
+    }
+
+    .formcontato__img {
+        display: none;
     }
 
     .formcontato__input {
