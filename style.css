@@ -173,13 +173,14 @@ section.skills {
     margin-bottom: 0.5rem;
 }
 
-.skills__img i {
+.skills__img__icon {
     color: var(--highlight-color);
 }
 
-.skills__img img {
-    color: var(--accent-color);
-    max-width: 20px;
+.skills__img__image {
+    /* color: var(--accent-color); */
+    width: 32px;
+    height: 32px;
 }
 
 .skills__name {
@@ -222,6 +223,10 @@ section.hobbies{
     margin-bottom: 0.5rem;
 }
 
+.hobbies__img__icon {
+    color: var(--highlight-color);
+}
+
 .hobbies__name {
     color: var(--highlight-color);
 }
@@ -245,8 +250,6 @@ section.academic {
 .academic__courses__box {
     width: 30%;
 }
-
-
 
 .academic__courses__list {
     margin: 0;
@@ -287,14 +290,14 @@ section.experience {
     flex-flow: row nowrap;
     width: 100%;
     gap: 3rem;
-    margin: 3rem;
+    margin: 3rem auto;
 }
 
 .experience__box__reverse {
     display: flex;
     flex-direction: row-reverse;
     gap: 3rem;
-    margin: 3rem;
+    margin: 3rem auto;
 }
 
 .experience__img {
@@ -327,6 +330,8 @@ section.experience {
 }
 
 .experiencia__botao--repo, .experience__botao--demo {
+    min-width: 120px;
+    min-height: 60px;
     font-size: 1rem;
     padding: 1rem;
     border-radius: 1.2rem;
@@ -585,11 +590,17 @@ Utiliza las referencias de los breakpoints @media abajo */
         margin: 0 2rem;
     }
     
-    /*title*/
+    /* Title */
 
     .title__div {
         flex-flow: row-reverse nowrap;
         align-items: center;
+        padding: 0 2rem;
+    }
+
+    /* About me */
+
+    .about__container {
         padding: 0 2rem;
     }
     
