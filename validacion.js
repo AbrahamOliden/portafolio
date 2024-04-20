@@ -6,15 +6,27 @@ const inputButton = document.getElementById('button-input');
 
 inputButton.addEventListener('click', validateFormInput.bind(null));
 
-var nameInputValue = document.getElementById('name-input').value;
-var emailInputValue = document.getElementById('email-input').value;
-var subjectInputValue = document.getElementById('subject-input').value;
-var messageInputValue = document.getElementById('message-input').value;
-
 function validateFormInput() {
-    alert('Aqui andamos gfe');
+    // Variables
+    const nameInputValue = document.getElementById('name-input').value;
+    const emailInputValue = document.getElementById('email-input').value;
+    const subjectInputValue = document.getElementById('subject-input').value;
+    const messageInputValue = document.getElementById('message-input').value;
+
+    validateNameField(nameInputValue)
+        ? alert('awebo')
+        : alert('no');
 };
 
-function validateNameField() {
+function validateNameField(nameInput) {
+    const nonEmptyRegex = /\S/g;
+    if ( !nonEmptyRegex.test(nameInput) ) {
+        alert("ta basio");
+        return false;
+    } else if (nameInput.length > 50) {
+        alert("Too mich characters");
+        return false;
+    }
 
+    return true   
 }
