@@ -17,8 +17,14 @@ function validateFormInput() {
         ? alert('name')
         : alert('no name');
     validateEmailField(emailInputValue)
-        ?alert('email')
-        :alert('no email');
+        ? alert('email')
+        : alert('no email');
+    validateSubjectField(subjectInputValue)
+        ? alert('subject')
+        : alert('no subject');
+    validateMessageField(messageInputValue)
+        ? alert('message')
+        : alert('no message');
 };
 
 function validateNameField(nameInput) {
@@ -27,7 +33,7 @@ function validateNameField(nameInput) {
         alert("nombre ta basio");
         return false;
     } else if (nameInput.length > 50) {
-        alert("Too mich characters");
+        alert("Too mich name");
         return false;
     };
 
@@ -47,3 +53,29 @@ function validateEmailField(emailInput) {
 
     return true;
 };
+
+function validateSubjectField(subjectInput) {
+
+    if ( !nonEmptyRegex.test(subjectInput) ) {
+        alert('subject ta basio');
+        return false;
+    } else if (subjectInput.length > 50) {
+        alert('Too much subject');
+        return false;
+    };
+
+    return true;
+};
+
+function validateMessageField(messageInput) {
+
+    if( !nonEmptyRegex.test(messageInput) ) {
+        alert('message to basio');
+        return false;
+    } else if (messageInput.length > 300) {
+        alert('Too much message');
+        return false;
+    };
+
+    return true;
+}
