@@ -390,6 +390,11 @@ section.formcontato{
     font-size: 0.8rem;
 }
 
+.error-message {
+    display: none;
+    color: red;
+}
+
 .formcontato__textarea {
     width: 90%;
     padding: 0.5rem;
