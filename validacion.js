@@ -1,81 +1,64 @@
 //Variables
-const nonEmptyRegex = /\S/g;
-const inputButton = document.getElementById('button-input');
+const nameInput = document.getElementById('name-input');
+const emailInput = document.getElementById('email-input');
+const subjectInput = document.getElementById('subject-input');
+const messageInput = document.getElementById('message-input');
+
+const submitButton = document.getElementById('button-input');
+const contactForm = document.getElementById('contact-form');
 
 // Event listeners
+nameInput.addEventListener('focusout', validateInput.bind(nameInput));
+emailInput.addEventListener('focusout', validateInput.bind(emailInput));
+subjectInput.addEventListener('focusout', validateInput.bind(subjectInput));
+messageInput.addEventListener('focusout', validateInput.bind(messageInput));
 
-inputButton.addEventListener('click', validateFormInput.bind(null));
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-function validateFormInput() {
-    // Variables
-    const nameInputValue = document.getElementById('name-input').value;
-    const emailInputValue = document.getElementById('email-input').value;
-    const subjectInputValue = document.getElementById('subject-input').value;
-    const messageInputValue = document.getElementById('message-input').value;
+    const isDisabled = submitButton.getAttribute('aria-disabled') === true;
 
-    validateNameField(nameInputValue)
-        ? alert('name')
-        : alert('no name');
-    validateEmailField(emailInputValue)
-        ? alert('email')
-        : alert('no email');
-    validateSubjectField(subjectInputValue)
-        ? alert('subject')
-        : alert('no subject');
-    validateMessageField(messageInputValue)
-        ? alert('message')
-        : alert('no message');
-};
+    if (isDisabled) return;
 
-function validateNameField(nameInput) {
+});
 
-    if ( !nonEmptyRegex.test(nameInput) ) {
-        alert("nombre ta basio");
-        return false;
-    } else if (nameInput.length > 50) {
-        alert("Too mich name");
-        return false;
-    };
+function validateInput() {
+    //Variables
+    const inputValue = this.value;
+    const errorMessageElement = document.getElementById(`${this.id}-error`)
 
-    return true;
-};
-
-function validateEmailField(emailInput) {
+    const nonEmptyRegex = /\S/g;
     const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-    if ( !nonEmptyRegex.test(emailInput) ) {
-        alert("email ta basio");
-        return false;
-    } else if ( !emailRegex.test(emailInput) ) {
-        alert('Please enter a valid email address');
+    if ( !nonEmptyRegex.test(inputValue) ) {
+        errorMessageElement.textContent = 'This field cannot be empty.';
+        this.setAttribute('aria-invalid', true);
         return false;
     };
 
-    return true;
+    switch (this.id) {
+        case 'email-input':
+            if ( !emailRegex.test(inputValue) ) {
+                errorMessageElement.textContent = 'Please entre a valid email address.';
+                this.setAttribute('aria-invalid', true);
+                return false;
+            };
+        case 'message-input':
+            if ( !inputValue.length > 300) {
+                errorMessageElement.textContent = 'Message cannot exceed 300 characters';
+                this.setAttribute('aria-invalid', true);
+                return false;
+            };
+        default:
+            if ( !inputValue.length > 50) {
+                errorMessageElement.textContent = 'Message cannot exceed 50 characters';
+                this.setAttribute('aria-invalid', true);
+                return false;
+            };
+        
+        errorMessageElement.textContent = '' //Clear message if input is valid
+        this.removeAttribute('aria-invalid'); //Remove aria-invalid
+        submitButton.removeAttribute('aria-disabled')
+        return true;
+    };
 };
-
-function validateSubjectField(subjectInput) {
-
-    if ( !nonEmptyRegex.test(subjectInput) ) {
-        alert('subject ta basio');
-        return false;
-    } else if (subjectInput.length > 50) {
-        alert('Too much subject');
-        return false;
-    };
-
-    return true;
-};
-
-function validateMessageField(messageInput) {
-
-    if( !nonEmptyRegex.test(messageInput) ) {
-        alert('message to basio');
-        return false;
-    } else if (messageInput.length > 300) {
-        alert('Too much message');
-        return false;
-    };
-
-    return true;
-}
