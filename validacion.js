@@ -1,12 +1,10 @@
 //Variables
-
 const nameInput = document.getElementById('name-input');
 const emailInput = document.getElementById('email-input');
 const subjectInput = document.getElementById('subject-input');
 const messageInput = document.getElementById('message-input');
 
 // Event listeners
-
 nameInput.addEventListener('focusout', validateInput.bind(element));
 emailInput.addEventListener('focusout', validateInput.bind(element));
 subjectInput.addEventListener('focusout', validateInput.bind(element));
@@ -21,11 +19,12 @@ function validateInput() {
 
     if ( !nonEmptyRegex(inputValue) ) return false;
 
-    if (this.id === 'message-input') {
-        return inputValue.length <= 300;
-    } else if (this.id === 'email-input') {
-        return emailRegex.test(inputValue);
-    } else {
-        return inputValue.length <= 50;
+    switch (this.id) {
+        case 'email-input':
+            return emailRegex.test(inputValue);
+        case 'message-input':
+            return inputValue.length <= 300;
+        default:
+            return inputValue.length <= 50;
     };
 };
