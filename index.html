@@ -258,10 +258,14 @@
                     <h3 class="formcontato__subtext">Want to contact me?</h3>
                     <h3 class="formcontato__subtext">Complete the form below and I will get in touch as soon as possible. </h3>
                     <form class="formcontato__form" name="form">
-                        <input class="formcontato__input" type="text" name="name" id="name-input" placeholder="Name">
-                        <input class="formcontato__input" type="email" name="email" id="email-input" placeholder="E-mail">
-                        <input class="formcontato__input" type="text" name="subject" id="subject-input" placeholder="Subject">
-                        <textarea class="formcontato__textarea" rows="5" cols="40" id="message-input" name="message" placeholder="Message"></textarea>
+                        <input class="formcontato__input" type="text" name="name" id="name-input" placeholder="Name" aria-describedby="name-error">
+                        <span class="error-message" id="name-error" aria-invalid></span>
+                        <input class="formcontato__input" type="email" name="email" id="email-input" placeholder="E-mail" aria-describedby="email-error">
+                        <span class="error-message" id="email-error" aria-invalid></span>
+                        <input class="formcontato__input" type="text" name="subject" id="subject-input" placeholder="Subject" aria-describedby="subject-error">
+                        <span class="error-message" id="subject-error" aria-invalid></span>
+                        <textarea class="formcontato__textarea" rows="5" cols="40" id="message-input" name="message" placeholder="Message" aria-describedby="message-error"></textarea>
+                        <span class="error-message" id="message-error" aria-invalid></span>
                         <button type="submit" class="formcontato__botao" id="button-input">Send message</button>
                     </form>
                 </div>
