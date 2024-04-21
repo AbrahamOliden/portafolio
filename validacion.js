@@ -13,18 +13,39 @@ messageInput.addEventListener('focusout', validateInput.bind(element));
 function validateInput() {
     //Variables
     const inputValue = this.value;
+    const errorMessageElement = document.getElementById(`${this.id}-error`)
 
     const nonEmptyRegex = /\S/g;
     const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-    if ( !nonEmptyRegex(inputValue) ) return false;
+    if ( !nonEmptyRegex(inputValue) ) {
+        errorMessageElement.textContent = 'This field cannot be empty.';
+        this.setAttribute('aria-invalid', true);
+        return false;
+    };
 
     switch (this.id) {
         case 'email-input':
-            return emailRegex.test(inputValue);
+            if ( !emailRegex.test(inputValue) ) {
+                errorMessageElement.textContent = 'Please entre a valid email address.';
+                this.setAttribute('aria-invalid', true);
+                return false;
+            };
         case 'message-input':
-            return inputValue.length <= 300;
+            if ( !inputValue.length > 300) {
+                errorMessageElement.textContent = 'Message cannot exceed 300 characters';
+                this.setAttribute('aria-invalid', true);
+                return false;
+            };
         default:
-            return inputValue.length <= 50;
+            if ( !inputValue.length > 50) {
+                errorMessageElement.textContent = 'Message cannot exceed 50 characters';
+                this.setAttribute('aria-invalid', true);
+                return false;
+            };
+        
+        errorMessageElement.textContent = '' //Clear message if input is valid
+        this.removeAttribute('aria-invalid'); //Remove aria-invalid
+        return true;
     };
 };
