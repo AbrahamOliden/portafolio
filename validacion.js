@@ -4,11 +4,23 @@ const emailInput = document.getElementById('email-input');
 const subjectInput = document.getElementById('subject-input');
 const messageInput = document.getElementById('message-input');
 
+const submitButton = document.getElementById('button-input');
+const contactForm = document.getElementById('contact-form');
+
 // Event listeners
-nameInput.addEventListener('focusout', validateInput.bind(element));
-emailInput.addEventListener('focusout', validateInput.bind(element));
-subjectInput.addEventListener('focusout', validateInput.bind(element));
-messageInput.addEventListener('focusout', validateInput.bind(element));
+nameInput.addEventListener('focusout', validateInput.bind(nameInput));
+emailInput.addEventListener('focusout', validateInput.bind(emailInput));
+subjectInput.addEventListener('focusout', validateInput.bind(subjectInput));
+messageInput.addEventListener('focusout', validateInput.bind(messageInput));
+
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const isDisabled = submitButton.getAttribute('aria-disabled') === true;
+
+    if (isDisabled) return;
+
+});
 
 function validateInput() {
     //Variables
@@ -18,7 +30,7 @@ function validateInput() {
     const nonEmptyRegex = /\S/g;
     const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-    if ( !nonEmptyRegex(inputValue) ) {
+    if ( !nonEmptyRegex.test(inputValue) ) {
         errorMessageElement.textContent = 'This field cannot be empty.';
         this.setAttribute('aria-invalid', true);
         return false;
@@ -46,6 +58,7 @@ function validateInput() {
         
         errorMessageElement.textContent = '' //Clear message if input is valid
         this.removeAttribute('aria-invalid'); //Remove aria-invalid
+        submitButton.removeAttribute('aria-disabled')
         return true;
     };
 };
