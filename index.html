@@ -257,7 +257,7 @@
                     <h2 class="formcontato__title">Contact</h2>
                     <h3 class="formcontato__subtext">Want to contact me?</h3>
                     <h3 class="formcontato__subtext">Complete the form below and I will get in touch as soon as possible. </h3>
-                    <form class="formcontato__form" name="form">
+                    <form class="formcontato__form" name="form" id="contact-form">
                         <input class="formcontato__input" type="text" name="name" id="name-input" placeholder="Name" aria-describedby="name-input-error">
                         <span class="error-message" id="name-input-error"></span>
 
@@ -270,7 +270,7 @@
                         <textarea class="formcontato__textarea" rows="5" cols="40" id="message-input" name="message" placeholder="Message" aria-describedby="message-input-error"></textarea>
                         <span class="error-message" id="message-input-error"></span>
 
-                        <button type="submit" class="formcontato__botao" id="button-input">Send message</button>
+                        <button type="submit" class="formcontato__botao" id="button-input" aria-disabled="true">Send message</button>
                     </form>
                 </div>
             </div>
